@@ -1,0 +1,14 @@
+sergiohs 192.168.0.101
+colmi	192.168.0.110
+
+Tracción
+R1 -> 	Stick Izq Forward/Back 	-> 	vel_lin
+	Stick Der Left/Right	->	vel_ang
+	
+Flippers delanteros
+R2 ->	 Stick Izq Forward/Back	-> 	Baja_Izq
+Gatillo	 Stick Der Forward/Back	-> 	Baja_Der
+	 
+Flippers trasero
+L2 ->	 Stick Izq Forward/Back	-> 	Baja_Izq
+Gatillo	 Stick Der Forward/Back	-> 	Baja_Der

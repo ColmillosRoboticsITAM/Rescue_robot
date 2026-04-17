@@ -1,0 +1,21 @@
+joy_teleop:
+  ros__parameters:
+    move:
+      type: topic
+      interface_type: geometry_msgs/msg/Twist
+      #topic_name: /turtle1/cmd_vel
+      #topic_name: /micro_ros_arduino_twist_subscriber
+      topic_name: /colmibot/cmd_vel
+
+      deadman_buttons: [5]
+
+      axis_mappings:
+        linear-x:
+          axis: 1
+          scale: 0.5
+          offset: 0.0
+
+        angular-z:
+          axis: 3
+          scale: 2.0
+          offset: 0.0
