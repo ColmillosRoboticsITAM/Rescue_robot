@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
 import serial
+import time
 
 
 class SerialBridgeEntropy(Node):
@@ -10,6 +11,11 @@ class SerialBridgeEntropy(Node):
         super().__init__('serial_entropy')
 
         self.ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
+        self.ser.dtr = False
+        self.ser.rts = False
+        time.sleep(0.1)
+        self.ser.reset_input_buffer()
+        
 
         self.subscription = self.create_subscription(
             Float32MultiArray,
@@ -21,7 +27,7 @@ class SerialBridgeEntropy(Node):
     def callback(self, msg):
 
         # convertir lista a string CSV
-        data = ",".join([f"{x:.2f}" for x in msg.data]) + "\n"
+        data = ",".join([f"{x:.1f}" for x in msg.data]) + "\n"
 
         self.ser.write(data.encode())
 

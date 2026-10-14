@@ -41,18 +41,18 @@ class JoyToTraccion(Node):
 
         # L2 presionado
         if R2 < -0.3:
-            data[0] = -eje4/0.7
-            data[1] = -eje1/0.7
+            data[0] = -eje4
+            data[1] = -eje1
 
         # R2 presionado
         if L2 < -0.3:
-            data[2] = eje4/0.7
-            data[3] = eje1/0.7
+            data[2] = eje4
+            data[3] = eje1
 
         # R1 presionado
         if R1 == 1:
             data[4] = -eje1
-            data[5] = -eje3/0.55
+            data[5] = -eje3
 
         msg_out = Float32MultiArray()
         msg_out.data = data
